@@ -1,0 +1,14 @@
+pdf masukkan ke ilmu
+
+file asli (individu & Kelompok) masukkan ke grup kelompok dan google drive
+=====================================
+
+Minggu depan akan membahas HTML5 dan CSS3
+
+tugas individu : menyempurnakan website sederhana menggunakan html5 dan css3
+
+tugas kelompok: sama seperti minggu sebelumnya, bedanya menggunakan html5 dan css3 serta menjelaskan perbedaan, kelebihan dan kekurangan antara html css, html5 css3
+
+setelah HTML5 Dan CSS3, di pertemuan ke-4 masuk ke JavaScript, pertemy ke-5 masuk JSON, pertemuan ke-6 jQuery, pertemuan ke-7 masuk framework sederhana. final project untuk kelompok membuat aplikasi yang berdeba-beda, nanti akan dibagikan. aplikasinya Dibuat dengan HTML5, CSS3, JavaScript, dan turunannya.
+
+pada tugas individu, di laporannya dijelaskan perbedaan/progres pada pembuatan webnya

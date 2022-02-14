@@ -1,0 +1,33 @@
+minggu depan besok hari senin set 10
+
+Selamat pagi, ada tugas dari Pak Rizki, buat kelompok beranggotakan 4 orang. kemudian buat grup telegram untuk kelompok tersebut dan invit Pak Rizki ke dalam grupnya. Pak Rizki akan menginvit mahasiswa ke ILMU. di ILMU sudah ada daftar tugas baik individu maupun kelompok. di ILMU akan ada link YT pembelajaran HTML dan CSS, wajib ditonton dan dipelajari. Rekomendasi buku yaitu buku dari Pak Abdul Qadir.
+
+Tugas individunya adalah membuat website sederhana, hanya boleh menggunakan HTML & CSS semampunya, tanpa menggunakan framework.
+isi website harus ada fotonya. hasilnya masukkan ke dokumen
+
+setelah HTML, CSS, kita belajar HTML5 dan CSS3.
+selanjutnya belajar JS (ajax, JSON, kemudian Jquery)
+untuk databasenya akan mempelajari DBMS MariaDB
+
+setelah UTS, akan mempelajari PHP. DBMS-nya menggunakan MySQL. goalnya adalah membuat website dengan kelompok dan melakukan publikasi.
+
+Buat akun Google Schoolar
+=====================================
+setelah website kelompoknya jadi, kemudian silakan pilih untuk membuat paper atau hak cipta.
+=====================================
+buat folder npm-nama di dalam folder tugas individu
+tugas kelompok, di ilmu kumpulkan hasil kerjaan masing". di gdrive kumpulkan kerjaan yang sudah digabung. DL Hari minggu jam 4 sore.
+
+hasil jadi web pribadi di ss, masukkan ke word, dibawahnya itu codenya. file docx unggah ke e-learning.
+
+TUGAS:
+1 kelompok 4 orang
+buat grup tele
+invit pak rizki di grup
+pak rizki menginvit ke ilmu
+sudah ada daftar tugas di ilmu
+pelajari HTML dan CSS dari YT-nya Pak Sandhika
+Rekomendasi buku yaitu buku dari Pak Abdul Qadir.
+
+PERTANYAAN :
+untuk website individu kapan DL?
