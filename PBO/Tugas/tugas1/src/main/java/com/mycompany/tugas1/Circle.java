@@ -8,18 +8,18 @@ package com.mycompany.tugas1;
  *
  * @author farhan
  */
-public class Square {
+public class Circle {
     // definisi atribut
-    public int sisi;
+    public int jariJari;
 
     // definisi method
-    int getKeliling() {
-        int keliling = sisi * 4;
+    float getKeliling() {
+        float keliling = 2 * 3.14f * jariJari;
         return keliling;
     }
 
-    int getLuas() {
-        int luas = sisi * sisi;
+    float getLuas() {
+        float luas = 3.14f * jariJari * jariJari;
         return luas;
     }
 }

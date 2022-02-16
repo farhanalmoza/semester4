@@ -8,18 +8,19 @@ package com.mycompany.tugas1;
  *
  * @author farhan
  */
-public class Square {
+public class Rectangle {
     // definisi atribut
-    public int sisi;
+    public int panjang;
+    public int lebar;
 
     // definisi method
     int getKeliling() {
-        int keliling = sisi * 4;
+        int keliling = 2 * (panjang + lebar);
         return keliling;
     }
 
     int getLuas() {
-        int luas = sisi * sisi;
+        int luas = panjang * lebar;
         return luas;
     }
 }

@@ -8,18 +8,19 @@ package com.mycompany.tugas1;
  *
  * @author farhan
  */
-public class Square {
+public class Elipse {
     // definisi atribut
-    public int sisi;
+    public int minor;
+    public int mayor;
 
     // definisi method
-    int getKeliling() {
-        int keliling = sisi * 4;
+    float getKeliling() {
+        float keliling = (float) (2 * 3.14f * Math.sqrt((mayor*mayor + minor*minor)/2));
         return keliling;
     }
 
-    int getLuas() {
-        int luas = sisi * sisi;
+    float getLuas() {
+        float luas = 3.14f * mayor * minor;
         return luas;
     }
 }
