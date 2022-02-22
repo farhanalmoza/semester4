@@ -2,7 +2,7 @@ let tabHeader = document.getElementsByClassName('tab-header')[0];
 let tabIndicator = document.getElementsByClassName('tab-indicator')[0];
 let tabBody = document.getElementsByClassName('tab-body')[0];
 
-let tabsPane = tabHeader.getElementsByTagName('div');
+let tabsPane = tabHeader.getElementsByClassName('pane');
 
 for(let i=0; i<tabsPane.length; i++) {
     tabsPane[i].addEventListener('click', function() {
@@ -17,70 +17,71 @@ for(let i=0; i<tabsPane.length; i++) {
 }
 
 
-// kotak
-function kotak(alas, tinggi) {
+// segitiga  1
+function segitiga1(form) {
+    let tinggi = form.getElementsByClassName('tinggi')[0].value;
     let hasil = '';
     for (let i = 0; i < tinggi; i++) {
-        for (let j = 0; j < alas; j++) {
-            hasil += '* ';
-        }
-        hasil += '\n';
-    }
-    return hasil;
-}
-
-// segitiga siku 1
-function segitigaSiku1(panjang) {
-    let hasil = '';
-    for (let i = 0; i < panjang; i++) {
         for (let j = 0; j <= i; j++) {
             hasil += '* ';
         }
-        hasil += "\n";
+        hasil += '<br>';
     }
-    return hasil;
+    let hasilArea = document.getElementsByClassName('bintang')[0];
+    hasilArea.innerHTML = hasil;
 }
 
 // segitiga siku 2
-function segitigaSiku2(panjang) {
+function segitiga2(form) {
+    let tinggi = form.getElementsByClassName('tinggi')[0].value;
     let hasil = '';
-    for (let i = 0; i < panjang; i++) {
-        for (let j = panjang; j > i; j--) {
-            hasil += '* ';
+    for (let i = 0; i < tinggi; i++) {
+        for (let j = tinggi; j > i; j--) {
+            hasil += '*';
         }
-        hasil += "\n";
+        hasil += "<br>";
     }
-    return hasil;
+    let hasilArea = document.getElementsByClassName('bintang')[0];
+    hasilArea.innerHTML = hasil;
 }
 
 // segitiga siku 3
-function segitigaSiku3(panjang) {
+function segitiga3(form) {
+    let tinggi = form.getElementsByClassName('tinggi')[0].value;
     let hasil = '';
-    for (let i = panjang; i > 0; i--) {
-        for (let j = 1; j <= panjang; j++) {
+    for (let i = tinggi; i > 0; i--) {
+        for (let j = 1; j <= tinggi; j++) {
             if (j >= i) {
                 hasil += '*';
             } else {
-                hasil += ' '
+                hasil += '&nbsp;';
             }
         }
-        hasil += '\n';
+        hasil += '<br>';
     }
-    return hasil;
+    let hasilArea = document.getElementsByClassName('bintang')[0];
+    hasilArea.innerHTML = hasil;
 }
 
 // segitiga siku 4
-function segitigaSiku4(panjang) {
+function segitiga4(form) {
+    let tinggi = form.getElementsByClassName('tinggi')[0].value;
     let hasil = '';
-    for (let i = panjang; i > 0; i--) {
-        for (let j = panjang; j > 0; j--) {
+    for (let i = tinggi; i > 0; i--) {
+        for (let j = tinggi; j > 0; j--) {
             if (j > i) {
-                hasil += ' ';
+                hasil += '&nbsp;';
             } else {
                 hasil += '*';
             }
         }
-        hasil += '\n';
+        hasil += '<br>';
     }
-    return hasil;
+    let hasilArea = document.getElementsByClassName('bintang')[0];
+    hasilArea.innerHTML = hasil;
+}
+
+function bersihkan() {
+    let bintang = document.getElementsByClassName('bintang')[0];
+    bintang.innerHTML = '';
 }

@@ -8,51 +8,67 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="tabs">
-		<div class="tab-header">
-				<div class="active">
-						Kotak
+	<div class="container">
+		<div class="tabs form">
+			<div class="tab-header">
+				<div class="pane active">Segitiga 1</div>
+				<div class="pane">Segitiga 2</div>
+				<div class="pane">Segitiga 3</div>
+				<div class="pane">Segitiga 4</div>
+			</div>
+			<div class="tab-indicator"></div>
+			<div class="tab-body">
+				<div class="content active">
+					<h2>Segitiga 1</h2>
+					<form id="segitiga1">
+						<div class="txt_field">
+							<input type="text" class="tinggi" required>
+							<span></span>
+							<label for="">Tinggi Segitiga</label>
+						</div>
+						<input type="button" value="Tampilkan" class="tampilkan" onclick="segitiga1(this.form)">
+					</form>
 				</div>
-				<div>
-						Segitiga 1
+				<div class="content">
+					<h2>Segitiga 2</h2>
+					<form id="segitiga2">
+						<div class="txt_field">
+							<input type="text" class="tinggi" required>
+							<span></span>
+							<label for="">Tinggi Segitiga</label>
+						</div>
+						<input type="button" value="Tampilkan" class="tampilkan" onclick="segitiga2(this.form)">
+					</form>
 				</div>
-				<div>
-						Segitiga 2
+				<div class="content">
+					<h2>Segitiga 3</h2>
+					<form id="segitiga3">
+						<div class="txt_field">
+							<input type="text" class="tinggi" required>
+							<span></span>
+							<label for="">Tinggi Segitiga</label>
+						</div>
+						<input type="button" value="Tampilkan" class="tampilkan" onclick="segitiga3(this.form)">
+					</form>
 				</div>
-				<div>
-						Segitiga 3
+				<div class="content">
+					<h2>Segitiga 4</h2>
+					<form id="segitiga4">
+						<div class="txt_field">
+							<input type="text" class="tinggi" required>
+							<span></span>
+							<label for="">Tinggi Segitiga</label>
+						</div>
+						<input type="button" value="Tampilkan" class="tampilkan" onclick="segitiga4(this.form)">
+					</form>
 				</div>
+			</div>
 		</div>
-		<div class="tab-indicator"></div>
-		<div class="tab-body">
-			<div class="content active">
-				<h2>Kotak</h2>
-				<form action="post">
-					<div class="txt_field">
-						<input type="text" required>
-						<span></span>
-						<label for="">Panjang</label>
-					</div>
-					<div class="txt_field">
-						<input type="text" required>
-						<span></span>
-						<label for="">Tinggi</label>
-					</div>
-					<input type="submit" value="Tampilkan">
-				</form>
-			</div>
-			<div class="content">
-				<h2>About Section</h2>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis aliquam ipsum magnam cumque, incidunt consequuntur pariatur error odio adipisci, quis dicta unde alias placeat. Exercitationem ratione sed eligendi quibusdam!</p>
-			</div>
-			<div class="content">
-				<h2>Services Section</h2>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis aliquam ipsum magnam cumque, incidunt consequuntur pariatur error odio adipisci, quis dicta unde alias placeat. Exercitationem ratione sed eligendi quibusdam!</p>
-			</div>
-			<div class="content">
-				<h2>Contact Section</h2>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis aliquam ipsum magnam cumque, incidunt consequuntur pariatur error odio adipisci, quis dicta unde alias placeat. Exercitationem ratione sed eligendi quibusdam!</p>
-			</div>
+
+		<div class="tabs hasil">
+			<h2>Hasil</h2>
+			<p class="bintang"></p>
+			<input type="button" value="Bersihkan" class="bersihkan" onclick="bersihkan()">
 		</div>
 	</div>
 	
