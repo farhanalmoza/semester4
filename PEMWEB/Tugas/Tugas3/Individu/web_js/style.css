@@ -101,6 +101,7 @@ input[type="button"]:hover {
     letter-spacing: 10px;
     text-transform: uppercase;
     font-weight: 900;
+    color: black;
 }
 p.bintang {
     text-align: left;
@@ -108,6 +109,7 @@ p.bintang {
     height: 55%;
     letter-spacing: normal;
     font-family: 'Courier New', Courier, monospace;
+    color: black;
 }
 .bersihkan {
     padding: 0 40px;
@@ -117,6 +119,7 @@ p.bintang {
 /* Form Style */
 .tabs.form h2 {
     text-align: center;
+    color: black;
 }
 .tabs form {
     padding: 0 20px;
@@ -134,6 +137,7 @@ form .txt_field {
     border: none;
     background: none;
     outline: none;
+    color: black;
 }
 .txt_field label {
     position: absolute;
