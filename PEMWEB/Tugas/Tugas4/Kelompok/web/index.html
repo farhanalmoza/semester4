@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Pemweb 4 | Kelompok 2</title>
+</head>
+<body>
+    
+    <div style="height: 500px; width: 500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <div style="height: 500px; width: 500px;">
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            updateChart();
+        });
+
+        function updateChart() {
+            async function fetchData() {
+                const url = './mahasiswa.json';
+                const response = await fetch(url);
+                // wait until the request is complete
+                const data = await response.json();
+                console.log(data);
+                return data;
+            };
+
+            fetchData().then(data => {
+                const nama = data.map(
+                    function(index) {return index.nama}
+                );
+
+                const sks = data.map(
+                    function(index) {return index.sks}
+                );
+
+                myChart.config.data.labels = nama;
+                myChart.config.data.datasets[0].data = sks;
+                myChart.update()
+            });
+        }
+
+        const data = {
+            datasets: [{
+                label: 'Jumlah SKS yang telah ditempuh',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        }
+
+        const config = {
+            type: 'pie',
+            data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        }
+
+        const bar = {
+            type: 'bar',
+            data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        }
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        )
+
+        const barChart = new Chart(
+            document.getElementById('barChart'),
+            bar
+        )
+    </script>
+
+</body>
+</html>
