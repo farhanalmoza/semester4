@@ -1,0 +1,194 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: arial;
+}
+
+nav{
+	display: flex;
+	text-decoration: none;
+	color: #fff; 
+	justify-content: space-around;
+	padding: 20px;	
+	background-color: brown;
+	color: white;
+	font-family: Arial;
+	font-weight: bold;
+	transition: 0.4s ease-in-out;
+}
+
+nav ul{
+
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	width: 30%;	
+
+}
+ul li{
+	margin-left: 62px;
+}
+
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	font-family: 'Times New Roman'
+	padding:30px;
+
+}
+nav ul li a:hover{
+	color: black;
+}
+p{
+	text-align: justify;
+	font-family: 'Times New Roman'
+	margin: 20px;
+	font-size: 15px;
+}
+.loginbtn{
+	font-size: 18px;
+	color: white;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	background: transparent;
+	font-family: 'Open Sans', sans-serif;
+	transition: .1s;
+}
+
+nav ul li a:hover{
+	background-color: #5f6368;
+}
+
+.loginbtn:hover{
+	background-color: #5f6368;
+}
+
+span{
+	color: rgba(228, 81, 164, 1);
+}
+
+/*Content 2*/
+
+#kotak-login-register{
+	display: none;
+}
+
+.form-box{
+	width: 380px;
+	height: 480px;
+	position: relative;
+	margin: 2% auto;
+	background-color: rgba(12,12,12,.3);
+	padding: 10px;
+	overflow: hidden;
+}
+
+.button-box{
+	width: 230px;
+	margin: 35px auto;
+	position: relative;
+	box-shadow: 0 0 20px 9px #ff61241f;
+	border-radius: 30px;
+}
+
+.toggle-btn{
+	padding: 10px 30px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+}
+
+#btn{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 110px;
+	height: 100%;
+	background: #f3c693;
+	border-radius: 30px;
+	transition: .5s;
+}
+
+.input-group-login{
+	position: absolute;
+	top: 150px;
+	width: 280px;
+	transition: .5s;
+}
+
+.input-group-register{
+	position: absolute;
+	top: 120px;
+	width: 280px;
+	transition: .5s;
+}
+
+.input-field{
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 0;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	border-bottom: 1px solid #999;
+	/*outline: none;*/
+	background: transparent;
+}
+
+.submit-btn{
+	width: 85%;
+	padding: 10px 30px;
+	display: block;
+	margin: auto;
+	border: 0;
+	outline: 0;
+	border-radius: 30px;
+	background-color: #f3c693;
+}
+
+#logos{
+	display: inline;
+	margin: 30px 10px 34px 0;
+}
+
+#agree{
+	display: inline;
+	margin: 30px 10px 34px 0;
+}
+
+label{
+	color: rgba(228, 81, 164, 1);
+	font-size: 15px;
+	bottom: 68px;
+}
+
+#login{
+	left: 50px;
+}
+
+#login input{
+	color: white;
+	font-size: 15px;
+}
+
+#register {
+	left: 450px;
+}
+
+#register input{
+	color: white;
+	font-size: 15px;
+}
+
+p{
+	text-align: justify;
+	font-family: 'Times New Roman'
+	padding:30px;
+	margin: 20px;
+}

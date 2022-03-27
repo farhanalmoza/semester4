@@ -39,5 +39,16 @@ public class Bola {
         for (int i = 0; i < bl.length; i++) {
             bl[i].GetVolume();
         }
+
+        int i = 0;
+        float jv = 0;
+        for (Bola vbl : bl) {
+            i++;
+            jv += vbl.volume;
+            if (i == bl.length) {
+                float rerata = jv / bl.length;
+                System.out.println("\nRata-rata dari volume bola dalam array adalah " + rerata);
+            }
+        }
     }
 }

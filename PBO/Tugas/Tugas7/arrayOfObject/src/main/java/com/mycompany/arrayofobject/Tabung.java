@@ -39,5 +39,16 @@ public class Tabung {
         for (int i = 0; i < t.length; i++) {
             t[i].GetVolume();
         }
+
+        int i = 0;
+        float jv = 0;
+        for (Tabung vt : t) {
+            i++;
+            jv += vt.volume;
+            if (i == t.length) {
+                float rerata = jv / t.length;
+                System.out.println("\nRata-rata dari volume tabung dalam array adalah " + rerata);
+            }
+        }
     }
 }

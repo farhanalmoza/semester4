@@ -39,5 +39,16 @@ public class LimasSegiEmpat {
         for (int i = 0; i < lse.length; i++) {
             lse[i].GetVolume();
         }
+
+        int i = 0;
+        float jv = 0;
+        for (LimasSegiEmpat vlse : lse) {
+            i++;
+            jv += vlse.volume;
+            if (i == lse.length) {
+                float rerata = jv / lse.length;
+                System.out.println("\nRata-rata dari volume limas segi empat dalam array adalah " + rerata);
+            }
+        }
     }
 }

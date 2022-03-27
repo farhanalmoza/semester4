@@ -39,5 +39,16 @@ public class Kubus {
         for (int i = 0; i < k.length; i++) {
             k[i].GetVolume();
         }
+
+        int i = 0;
+        int jv = 0;
+        for (Kubus vk : k) {
+            i++;
+            jv += vk.volume;
+            if (i == k.length) {
+                int rerata = jv / k.length;
+                System.out.println("Rata-rata dari volume kubus dalam array adalah " + rerata);
+            }
+        }
     }
 }

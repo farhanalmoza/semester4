@@ -39,5 +39,16 @@ public class Balok {
         for (int i = 0; i < b.length; i++) {
             b[i].GetVolume();
         }
+
+        int i = 0;
+        int jv = 0;
+        for (Balok vb : b) {
+            i++;
+            jv += vb.volume;
+            if (i == b.length) {
+                int rerata = jv / b.length;
+                System.out.println("Rata-rata dari volume balok dalam array adalah " + rerata);
+            }
+        }
     }
 }
