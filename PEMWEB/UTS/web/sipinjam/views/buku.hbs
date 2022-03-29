@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="container">
-		<!-- ----------------- ASIDE ----------------- -->
+		<!--  ASIDE  -->
 		<aside>
 			<div class="top">
 				<div class="logo">
@@ -56,16 +56,16 @@
 				</a>
 			</div>
 		</aside>
-		<!-- ----------------- END OF ASIDE ----------------- -->
+		<!--  END OF ASIDE  -->
 
-		<!-- ----------------- MAIN CONTENT ----------------- -->
+		<!--  MAIN CONTENT  -->
 		<main>
 			<h1>Buku</h1>
 			
 			<div class="card-form">
 				<h2>Tambah Buku</h2>
 				<div class="form">
-					<form action="#">
+					<form action="/save/buku" method="post">
 						<div class="form-control">
 							<label for="judul">Judul Buku</label>
 							<input type="text" name="judul" id="judul" placeholder="Judul buku">
@@ -79,8 +79,8 @@
 							<input type="text" name="penulis" id="penulis" placeholder="Penulis buku">
 						</div>
 						<div class="form-control">
-							<label for="tehun_terbit">Tahun Terbit</label>
-							<input type="number" name="tehun_terbit" id="tehun_terbit" placeholder="Tahun terbit buku">
+							<label for="tahun_terbit">Tahun Terbit</label>
+							<input type="number" name="tahun_terbit" id="tahun_terbit" placeholder="Tahun terbit buku">
 						</div>
 						<div class="form-control">
 							<label for="stok">Stok</label>
@@ -94,66 +94,14 @@
 			</div>
 
 			<div class="recent-orders">
-				<h2>Recent Order</h2>
-				<table>
-					<thead>
-						<tr>
-							<th>Product Name</th>
-							<th>Product Number</th>
-							<th>Payment</th>
-							<th>Status</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Foldable Mini Drone</td>
-							<td>85631</td>
-							<td>Due</td>
-							<td class="warning">Pending</td>
-							<td class="primary">Details</td>
-						</tr>
-						<tr>
-							<td>Foldable Mini Drone</td>
-							<td>85631</td>
-							<td>Due</td>
-							<td class="warning">Pending</td>
-							<td class="primary">Details</td>
-						</tr>
-						<tr>
-							<td>Foldable Mini Drone</td>
-							<td>85631</td>
-							<td>Due</td>
-							<td class="warning">Pending</td>
-							<td class="primary">Details</td>
-						</tr>
-						<tr>
-							<td>Foldable Mini Drone</td>
-							<td>85631</td>
-							<td>Due</td>
-							<td class="warning">Pending</td>
-							<td class="primary">Details</td>
-						</tr>
-						<tr>
-							<td>Foldable Mini Drone</td>
-							<td>85631</td>
-							<td>Due</td>
-							<td class="warning">Pending</td>
-							<td class="primary">Details</td>
-						</tr>
-						<tr>
-							<td>Foldable Mini Drone</td>
-							<td>85631</td>
-							<td>Due</td>
-							<td class="warning">Pending</td>
-							<td class="primary">Details</td>
-						</tr>
-					</tbody>
+				<h2>Daftar Buku</h2>
+				<table id="tabel-buku">
+					
 				</table>
 				<a href="#">Show All</a>
 			</div>
 		</main>
-		<!-- ----------------- END OF MAIN ----------------- -->
+		<!--  END OF MAIN  -->
 
 		<div class="right">
 			<div class="top">
@@ -170,97 +118,76 @@
 						<small class="text-muted">Admin</small>
 					</div>
 					<div class="profile-photo">
-						<img src="/assets/img/profile-1.jpg">
+						<img src="/assets/img/profile-1.png">
 					</div>
 				</div>
 			</div>
 			<!-- END OF TOP -->
+		</div>
+	</div>
 
-			<div class="recent-updates">
-				<h2>Recent Updates</h2>
-				<div class="updates">
-					<div class="update">
-						<div class="profile-photo">
-							<img src="/assets/img/profile-2.jpg">
+	{{!-- Modal Edit --}}
+	<div class="modal-container" id="editModal">
+		<div class="modal">
+			<h2>Ubah Data Anggota</h2>
+			<div class="form">
+				<form action="/update/buku" method="post">
+					<input type="hidden" class="id" name="id">
+					<div class="form-control">
+							<label for="judul">Judul Buku</label>
+							<input type="text" name="judul" class="judul">
 						</div>
-						<div class="message">
-							<p><b>Mike Tyson</b> received his order of Night lien tech GPS dron.</p>
-							<small class="text-muted">2 Minutes Ago</small>
+						<div class="form-control">
+							<label for="penerbit">Penerbit</label>
+							<input type="text" name="penerbit" class="penerbit">
 						</div>
-					</div>
-					<div class="update">
-						<div class="profile-photo">
-							<img src="/assets/img/profile-3.jpg">
+						<div class="form-control">
+							<label for="penulis">Penulis</label>
+							<input type="text" name="penulis" class="penulis">
 						</div>
-						<div class="message">
-							<p><b>Mike Tyson</b> received his order of Night lien tech GPS dron.</p>
-							<small class="text-muted">2 Minutes Ago</small>
+						<div class="form-control">
+							<label for="tahun_terbit">Tahun Terbit</label>
+							<input type="number" name="tahun_terbit" class="tahun_terbit">
 						</div>
-					</div>
-					<div class="update">
-						<div class="profile-photo">
-							<img src="/assets/img/profile-4.jpg">
+						<div class="form-control">
+							<label for="stok">Stok</label>
+							<input type="number" name="stok" class="stok">
 						</div>
-						<div class="message">
-							<p><b>Mike Tyson</b> received his order of Night lien tech GPS dron.</p>
-							<small class="text-muted">2 Minutes Ago</small>
-						</div>
+					<div class="submit">
+						<button type="submit">Ubah</button>
+						<a type="button" id="closeEditModal">Batal</a>
 					</div>
-				</div>
-			</div>
-			<!-- END OF RECENT UPDATES -->
-			
-			<div class="sales-analytics">
-				<h2>Sales Analytics</h2>
-				<div class="item online">
-					<div class="icon">
-						<span class="material-icons-sharp">shopping_cart</span>
-					</div>
-					<div class="right">
-						<div class="info">
-							<h3>ONLINE ORDERS</h3>
-							<small class="text-muted">Last 24 hours</small>
-						</div>
-						<h5 class="success">+39%</h5>
-						<h3>3849</h3>
-					</div>
-				</div>
-				<div class="item offline">
-					<div class="icon">
-						<span class="material-icons-sharp">local_mall</span>
-					</div>
-					<div class="right">
-						<div class="info">
-							<h3>OFFLINE ORDERS</h3>
-							<small class="text-muted">Last 24 hours</small>
-						</div>
-						<h5 class="danger">-17%</h5>
-						<h3>1100</h3>
-					</div>
-				</div>
-				<div class="item customers">
-					<div class="icon">
-						<span class="material-icons-sharp">person</span>
-					</div>
-					<div class="right">
-						<div class="info">
-							<h3>NEW CUSTIMERS</h3>
-							<small class="text-muted">Last 24 hours</small>
-						</div>
-						<h5 class="success">+25%</h5>
-						<h3>849</h3>
-					</div>
-				</div>
-				<div class="item add-product">
-					<div>
-						<span class="material-icons-sharp">add</span>
-						<h3>Add Product</h3>
-					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
+	{{!-- End Modal Edit --}}
+
+	{{!-- Modal Hapus --}}
+	<div class="modal-container" id="hapusModal">
+		<div class="modal">
+			<h2>Hapus Data Buku</h2>
+			<div class="form">
+				<form action="/delete/buku" method="post">
+					<input type="hidden" class="id_buku" name="id">
+					<p>Anda yakin mau menghapus data ini?</p>
+					<div class="submit">
+						<button type="submit">Ya!</button>
+						<a type="button" id="closeHapusModal">Batal</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	{{!-- End Modal Hapus --}}
     
+	<script src="/assets/js/jquery-3.3.1.js"></script>
+
+	{{!-- My Script --}}
 	<script src="/assets/js/script.js"></script>
+	<script src="/assets/js/functions.js"></script>
+
+	{{!-- Page Script --}}
+	<script src="/assets/js/buku.js"></script>
 </body>
 </html>

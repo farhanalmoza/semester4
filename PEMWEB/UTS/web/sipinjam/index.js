@@ -33,65 +33,58 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //set folder public sebagai static folder untuk static file
 app.use('/assets',express.static(__dirname + '/public'));
 
-//route untuk dashboard
-app.get('/',(req, res) => {
+//route halaman
+app.get('/',(req, res) => { res.render('dashboard',{}); });
+app.get('/anggota',(req, res) => { res.render('anggota',{}); });
+app.get('/buku',(req, res) => { res.render('buku',{}); });
+app.get('/peminjaman',(req, res) => { res.render('peminjaman',{}); });
+app.get('/pengembalian',(req, res) => { res.render('pengembalian',{}); });
+
+// route all
+app.get('/all/anggota',(req, res) => {
   let sql = "SELECT * FROM anggota";
   let query = conn.query(sql, (err, results) => {
     if(err) throw err;
-    res.render('dashboard',{
-      results: results
-    });
+    return res.json(results);
   });
 });
-// route halaman anggota
-app.get('/anggota',(req, res) => {
-  let sql = "SELECT * FROM anggota";
+app.get('/all/buku',(req, res) => {
+  let sql = "SELECT * FROM buku";
   let query = conn.query(sql, (err, results) => {
     if(err) throw err;
-    res.render('anggota',{
-      results: results
-    });
+    return res.json(results);
   });
 });
-// route halaman buku
-app.get('/buku',(req, res) => {
-  let sql = "SELECT * FROM anggota";
+app.get('/all/peminjaman',(req, res) => {
+  let sql = "SELECT * FROM peminjaman";
   let query = conn.query(sql, (err, results) => {
     if(err) throw err;
-    res.render('buku',{
-      results: results
-    });
+    return res.json(results);
   });
 });
-// route halaman peminjaman
-app.get('/peminjaman',(req, res) => {
-  let sql = "SELECT * FROM anggota";
+app.get('/all/pengembalian',(req, res) => {
+  let sql = "SELECT * FROM pengembalian";
   let query = conn.query(sql, (err, results) => {
     if(err) throw err;
-    res.render('peminjaman',{
-      results: results
-    });
-  });
-});
-// route halaman pengembalian
-app.get('/pengembalian',(req, res) => {
-  let sql = "SELECT * FROM anggota";
-  let query = conn.query(sql, (err, results) => {
-    if(err) throw err;
-    res.render('pengembalian',{
-      results: results
-    });
+    return res.json(results);
   });
 });
 
-
-//route untuk insert data
+//route untuk insert
 app.post('/save/anggota',(req, res) => {
   let data = {id: req.body.id_anggota, nama: req.body.nama_anggota, telepon: req.body.telepon_anggota, alamat: req.body.alamat_anggota};
   let sql = "INSERT INTO anggota SET ?";
   let query = conn.query(sql, data,(err, results) => {
     if(err) throw err;
-    res.redirect('/');
+    res.redirect('/anggota');
+  });
+});
+app.post('/save/buku',(req, res) => {
+  let data = {judul: req.body.judul, penerbit: req.body.penerbit, penulis: req.body.penulis, tahun_terbit: req.body.tahun_terbit, stok: req.body.stok};
+  let sql = "INSERT INTO buku SET ?";
+  let query = conn.query(sql, data,(err, results) => {
+    if(err) throw err;
+    res.redirect('/buku');
   });
 });
 
@@ -103,6 +96,19 @@ app.post('/update/anggota',(req, res) => {
     res.redirect('/anggota');
   });
 });
+app.post('/update/buku',(req, res) => {
+  let sql = "UPDATE buku SET id='"+req.body.id
+              +"', judul='"+req.body.judul
+              +"', penerbit='"+req.body.penerbit
+              +"', penulis='"+req.body.penulis
+              +"', tahun_terbit='"+req.body.tahun_terbit
+              +"', stok='"+req.body.stok
+              +"' WHERE id="+req.body.id;
+  let query = conn.query(sql, (err, results) => {
+    if(err) throw err;
+    res.redirect('/buku');
+  });
+});
 
 //route untuk delete data
 app.post('/delete/anggota',(req, res) => {
@@ -110,6 +116,14 @@ app.post('/delete/anggota',(req, res) => {
   let query = conn.query(sql, (err, results) => {
     if(err) throw err;
       res.redirect('/anggota');
+  });
+});
+//route untuk delete data buku
+app.post('/delete/buku',(req, res) => {
+  let sql = "DELETE FROM buku WHERE id="+req.body.id+"";
+  let query = conn.query(sql, (err, results) => {
+    if(err) throw err;
+      res.redirect('/buku');
   });
 });
 
