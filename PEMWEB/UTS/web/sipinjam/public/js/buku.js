@@ -1,5 +1,6 @@
 $(document).ready(function() {
     getBuku.loadData = "/all/buku";
+    getKategori.loadData = "/all/kategori";
 });
 
 const getBuku = {
@@ -42,11 +43,39 @@ const getBuku = {
     }
 }
 
+const getKategori = {
+    set loadData(data) {
+        const url = "http://localhost:8000" + data;
+        Functions.prototype.getRequest(getKategori, url);
+    },
+    set successData(response) {
+        let kategori = response;
+        const allKategori = $(".sales-analytics");
+        for (let i = 0; i < kategori.length; i++) {
+            allKategori.append(`
+            <div class="item online">
+                <div class="right">
+                    <div class="info">
+                        <h3 class="nama-kategori">${kategori[i].kategori}</h3>
+                    </div>
+                    <h3 class="success">3849</h3>
+                </div>
+            </div>
+            `);
+        }
+    }
+}
+
+
 const editModal = document.querySelector('#editModal');
 const closeEditModal = document.getElementById('closeEditModal');
 
 const hapusModal = document.querySelector('#hapusModal');
 const closeHapusModal = document.getElementById('closeHapusModal');
+
+const addKategoriModal = document.querySelector('#addKategoriModal');
+const addKategori = document.querySelector('.add-kategori');
+const closeAddKategoriModal = document.getElementById('closeAddKategoriModal');
 
 $('#tabel-buku').on('click', '.edit', function() {
     var id = $(this).data('id');
@@ -76,4 +105,11 @@ $('#tabel-buku').on('click', '.delete', function() {
 })
 closeHapusModal.addEventListener('click', function() {
     hapusModal.classList.remove('show');
+});
+
+addKategori.addEventListener('click', function() {
+    addKategoriModal.classList.add('show');
+});
+closeAddKategoriModal.addEventListener('click', function() {
+    addKategoriModal.classList.remove('show');
 });

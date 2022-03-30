@@ -13,12 +13,12 @@ const getAnggota = {
         const option = document.createElement("option");
         option.value = "";
         option.innerHTML = "Pilih Anggota";
-        document.getElementById("no_anggota").appendChild(option);
+        document.getElementById("id_anggota").appendChild(option);
         for (let i = 0; i < data.length; i++) {
             const option = document.createElement("option");
             option.value = data[i].id;
             option.innerHTML = data[i].nama;
-            document.getElementById("no_anggota").appendChild(option);
+            document.getElementById("id_anggota").appendChild(option);
         }
     }
 }

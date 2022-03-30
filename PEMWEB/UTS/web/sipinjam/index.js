@@ -55,6 +55,13 @@ app.get('/all/buku',(req, res) => {
     return res.json(results);
   });
 });
+app.get('/all/kategori',(req, res) => {
+  let sql = "SELECT * FROM kategori";
+  let query = conn.query(sql, (err, results) => {
+    if(err) throw err;
+    return res.json(results);
+  });
+});
 app.get('/all/peminjaman',(req, res) => {
   let sql = "SELECT * FROM peminjaman";
   let query = conn.query(sql, (err, results) => {
@@ -85,6 +92,26 @@ app.post('/save/buku',(req, res) => {
   let query = conn.query(sql, data,(err, results) => {
     if(err) throw err;
     res.redirect('/buku');
+  });
+});
+app.post('/save/kategori',(req, res) => {
+  let data = {kategori: req.body.kategori};
+  let sql = "INSERT INTO kategori SET ?";
+  let query = conn.query(sql, data,(err, results) => {
+    if(err) throw err;
+    res.redirect('/buku');
+  });
+});
+app.post('/save/peminjaman',(req, res) => {
+  let data = {tgl_pinjam: req.body.tgl_pinjam,
+              tgl_kembali: req.body.tgl_kembali,
+              id_anggota: req.body.id_anggota,
+              id_buku: req.body.id_buku,
+              id_petugas: req.body.id_petugas};
+  let sql = "INSERT INTO peminjaman SET ?";
+  let query = conn.query(sql, data,(err, results) => {
+    if(err) throw err;
+    res.redirect('/peminjaman');
   });
 });
 
