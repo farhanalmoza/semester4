@@ -1,6 +1,7 @@
 $(document).ready(function() {
     getBuku.loadData = "/buku/all";
     getKategori.loadData = "/kategori/all";
+    getPetugas.loadData = "/petugas/profile";
 });
 
 window.jsPDF = window.jspdf.jsPDF;
@@ -91,7 +92,6 @@ const closeAddKategoriModal = document.getElementById('closeAddKategoriModal');
 const hapusKategoriModal = document.querySelector('#hapusKategoriModal');
 const closeHapusKategoriModal = document.getElementById('closeHapusKategoriModal');
 
-
 $('#tabel-buku').on('click', '.edit', function() {
     var id = $(this).data('id');
     var judul = $(this).data('judul');
@@ -139,8 +139,6 @@ closeHapusKategoriModal.addEventListener('click', function() {
 });
 
 function generatePDF() {
-    const tabelBuku = document.getElementById('tabel-buku');
-    // console.log(getBuku);
     reportBuku.loadData = "/buku/all";
 }
 
@@ -150,7 +148,7 @@ const reportBuku = {
         Functions.prototype.getRequest(reportBuku, url);
     },
     set successData(response) {
-        var buku = "";
+        var buku = "Daftar Buku Sipinjam \n";
         for (let i = 0; i < response.length; i++) {
             let judul = JSON.stringify(response[i].judul);
             let penulis = JSON.stringify(response[i].penulis);
@@ -167,5 +165,16 @@ const reportBuku = {
         const doc = new jsPDF();
         doc.text(buku, 10, 10);
         doc.save("Laporan Buku.pdf");
+    }
+}
+
+const getPetugas = {
+    set loadData(data) {
+        const url = "http://localhost:8000" + data;
+        Functions.prototype.getRequest(getPetugas, url);
+    },
+    set successData(response) {
+        const data = response;
+        document.getElementById("nama-petugas").innerHTML = data[0].nama;
     }
 }
