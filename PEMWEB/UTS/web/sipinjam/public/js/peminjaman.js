@@ -10,6 +10,7 @@ $(document).ready(function(){
     const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     const yyyy = today.getFullYear();
     const todayDate = yyyy + '-' + mm + '-' + dd;
+    $('#tgl_pinjam_display').val(todayDate);
     $('#tgl_pinjam').val(todayDate);
 });
 
@@ -27,7 +28,7 @@ const getAnggota = {
         for (let i = 0; i < data.length; i++) {
             const option = document.createElement("option");
             option.value = data[i].id;
-            option.innerHTML = data[i].nama;
+            option.innerHTML = data[i].nama_anggota;
             document.getElementById("id_anggota").appendChild(option);
         }
     }
@@ -95,9 +96,9 @@ const getPeminjaman = {
             const tgl_pinjam = `${tanggal} ${bln} ${tahun}`;
             table.append(`
                 <tr>
-                    <td>${data[i].id}</td>
+                    <td>${data[i].id_peminjaman}</td>
                     <td>${tgl_pinjam}</td>
-                    <td>${data[i].nama}</td>
+                    <td>${data[i].nama_anggota}</td>
                     <td>${data[i].judul}</td>
                 </tr>
             `);

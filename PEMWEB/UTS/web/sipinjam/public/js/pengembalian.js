@@ -58,7 +58,7 @@ const getDetailPeminjaman = {
         const data = response;
         document.getElementById("judul_buku").value = data[0].judul;
         document.getElementById("id_buku").value = data[0].id_buku;
-        document.getElementById("nama_anggota").value = data[0].nama;
+        document.getElementById("nama_anggota").value = data[0].nama_anggota;
         document.getElementById("id_anggota").value = data[0].id_anggota;
     }
 }
