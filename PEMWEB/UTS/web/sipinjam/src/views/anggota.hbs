@@ -71,6 +71,14 @@
 							<input type="text" name="nama_anggota" id="nama_anggota" placeholder="Nama lengkap calon anggota">
 						</div>
 						<div class="form-control">
+							<label for="jk">Jenis Kelamin</label>
+							<select name="jk" id="jk">
+								<option>Jenis Kelamin</option>
+								<option value="L">Laki-laki</option>
+								<option value="P">Perempuan</option>
+							</select>
+						</div>
+						<div class="form-control">
 							<label for="telepon">No Telepon</label>
 							<input type="number" name="telepon_anggota" id="telepon_anggota" placeholder="No telepon calon anggota">
 						</div>
@@ -90,11 +98,23 @@
 				<table id="tabel-anggota">
 					
 				</table>
-				<a href="#">Show All</a>
+				
+				<!--  PAGINATION  -->
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center" id="pagination-anggota">
+						
+					</ul>
+				</nav>
+			</div>
+
+			<div class="recent-orders">
+				<h2>Persebaran Anggota</h2>
+				<canvas id="anggotaBarChart"></canvas>
+				<a href=""></a>
 			</div>
 		</main>
 		{{!------------------- END OF MAIN -------------------}}
-
+		
 		<div class="right">
 			<div class="top">
 				<button id="menu-btn">
@@ -115,6 +135,14 @@
 				</div>
 			</div>
 			<!-- END OF TOP -->
+
+			<div class="recent-updates">
+				<h2>Persebaran Anggota</h2>
+				<div class="updates">
+					<canvas id="anggotaPieChart"></canvas>
+				</div>
+			</div>
+			<!-- END OF CHART PERSEBARAN ANGGOTA -->
 		</div>
 	</div>
 
@@ -128,6 +156,13 @@
 					<div class="form-control">
 						<label for="nama">Nama lengkap</label>
 						<input type="text" name="nama_anggota" class="nama_anggota" placeholder="Nama lengkap calon anggota">
+					</div>
+					<div class="form-control">
+						<label for="jk_update">Jenis Kelamin</label>
+						<select name="jk_update" id="jk_update" class="jk_update">
+							<option value="L">Laki-laki</option>
+							<option value="P">Perempuan</option>
+						</select>
 					</div>
 					<div class="form-control">
 						<label for="telepon">No Telepon</label>
@@ -165,7 +200,11 @@
 	</div>
 	{{!-- End Modal Hapus --}}
     
+	{{!-- jQuery --}}
 	<script src="/assets/js/jquery-3.3.1.js"></script>
+
+	{{!-- Chart JS --}}
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 
 	{{!-- My Script --}}
 	<script src="assets/js/script.js"></script>

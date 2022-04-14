@@ -4,9 +4,9 @@ const verifyUser = require('../configs/verify');
 
 router.get('/', verifyUser.isLogin, peminjamanController.index);
 router.get('/all', verifyUser.isLogin, peminjamanController.all);
+router.get('/pinjam', verifyUser.isLogin, peminjamanController.pinjam);
+router.get('/kembali', verifyUser.isLogin, peminjamanController.kembali);
 router.post('/save', verifyUser.isLogin, peminjamanController.save);
-router.post('/update', verifyUser.isLogin, peminjamanController.update);
-router.post('/delete', verifyUser.isLogin, peminjamanController.delete);
 router.get('/detail/:id', verifyUser.isLogin, peminjamanController.getById);
 
 module.exports = router;

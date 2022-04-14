@@ -2,6 +2,8 @@ $(document).ready(function() {
     getBuku.loadData = "/buku/all";
     getKategori.loadData = "/kategori/all";
     getPetugas.loadData = "/petugas/profile";
+
+    kategoriChart();
 });
 
 window.jsPDF = window.jspdf.jsPDF;
@@ -12,38 +14,7 @@ const getBuku = {
         Functions.prototype.getRequest(getBuku, url);
     },
     set successData(response) {
-        let buku = response;
-        const table = $("#tabel-buku");
-        // table.empty();
-        table.append(`
-            <tr>
-                <th width="35%">Judul</th>
-                <th>Pengarang</th>
-                <th>Penerbit</th>
-                <th>Tahun</th>
-                <th>Stok</th>
-                <th></th>
-            </tr>
-        `);
-        for (let i = 0; i < buku.length; i++) {
-            table.append(`
-                <tr>
-                    <td>${buku[i].judul}</td>
-                    <td>${buku[i].penulis}</td>
-                    <td>${buku[i].penerbit}</td>
-                    <td>${buku[i].tahun_terbit}</td>
-                    <td>${buku[i].stok}</td>
-                    <td class="danger delete" data-id="${buku[i].id}">Hapus</td>
-                    <td class="primary edit" data-id="${buku[i].id}"
-                                             data-judul="${buku[i].judul}"
-                                             data-kategori="${buku[i].id_kategori}"
-                                             data-penulis="${buku[i].penulis}"
-                                             data-penerbit="${buku[i].penerbit}"
-                                             data-tahun_terbit="${buku[i].tahun_terbit}"
-                                             data-stok="${buku[i].stok}">Edit</td>
-                </tr>
-            `);
-        }
+        paginatedResult(response, $("#tabel-buku"), $("#pagination-buku"), 1);
     }
 }
 
@@ -62,7 +33,7 @@ const getKategori = {
                     <div class="info">
                         <h3 class="nama-kategori">${kategori[i].kategori}</h3>
                     </div>
-                    <h3 class="danger delete" data-id="${kategori[i].id}">Hapus</h3>
+                    <h3 class="danger delete" data-id="${kategori[i].id_kategori}">Hapus</h3>
                 </div>
             </div>
             `);
@@ -75,7 +46,7 @@ const getKategori = {
         document.getElementById("id_kategori").appendChild(option);
         for (let i = 0; i < kategori.length; i++) {
             const option = document.createElement("option");
-            option.value = kategori[i].id;
+            option.value = kategori[i].id_kategori;
             option.innerHTML = kategori[i].kategori;
             document.getElementById("id_kategori").appendChild(option);
         }
@@ -87,9 +58,9 @@ const getKategori = {
         document.getElementsByClassName("id_kategori")[0].appendChild(optionUpdate);
         for (let i = 0; i < kategori.length; i++) {
             const optionUpdate = document.createElement("option");
-            optionUpdate.value = kategori[i].id;
+            optionUpdate.value = kategori[i].id_kategori;
             optionUpdate.innerHTML = kategori[i].kategori;
-            document.getElementsByClassName("id_kategori")[0].appendChild(optionUpdate);
+            document.getElementsByClassName("id_kategori_after")[0].appendChild(optionUpdate);
         }
     }
 }
@@ -115,7 +86,8 @@ $('#tabel-buku').on('click', '.edit', function() {
     var stok = $(this).data('stok');
     $('.id').val(id);
     $('.judul').val(judul);
-    $('.id_kategori').val(kategori);
+    $('#id_kategori_before').val(kategori);
+    $('.id_kategori_after').val(kategori);
     $('.penerbit').val(penerbit);
     $('.penulis').val(penulis);
     $('.tahun_terbit').val(tahun_terbit);
@@ -192,4 +164,186 @@ const getPetugas = {
         const data = response;
         document.getElementById("nama-petugas").innerHTML = data[0].nama;
     }
+}
+
+// pie chart kategori
+function kategoriChart() {
+    async function fetchData() {
+        const url = "http://localhost:8000/kategori/all";
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    }
+
+    fetchData().then(data => {
+        const kategori = data.map(
+            function(index) {return index.kategori}
+        );
+        const jumlah = data.map(
+            function(index) {return index.jumlah}
+        );
+
+        myKategoriChart.config.data.labels = kategori;
+        myKategoriChart.config.data.datasets[0].data = jumlah;
+        myKategoriChart.update();
+
+        // bar kategori char
+        myBarKategoriChart.config.data.labels = kategori;
+        myBarKategoriChart.config.data.datasets[0].data = jumlah;
+        myBarKategoriChart.update();
+    });
+}
+
+const dataKategori = {
+    datasets: [{
+        label: 'Kategori Buku',
+        backgroundColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],borderWidth: 1
+    }]
+}
+
+const configKategori = {
+    type: 'pie',
+    data: dataKategori,
+}
+
+const myKategoriChart = new Chart(
+    document.getElementById('chartKategori'),
+    configKategori
+);
+// end pie chart kategori
+
+// bar chart kategori
+const configBarKategori = {
+    type: 'bar',
+    data: dataKategori,
+}
+
+const myBarKategoriChart = new Chart(
+    document.getElementById('bukuBarChart'),
+    configBarKategori
+);
+// end bar chart kategori
+
+// pagination
+function paginatedResult(response, table, pagination, page) {
+    const limit = 10
+
+    const startIndex = (page - 1) * limit
+    const endIndex = page * limit
+
+    const results = {}
+
+    if (endIndex < response.length) {
+        results.next = {
+            page: page + 1,
+        }
+    }
+    if (startIndex > 0) {
+        results.previous = {
+            page: page - 1,
+        }
+    }
+
+    results.results = response.slice(startIndex, endIndex)
+    
+    table.empty();
+    table.append(`
+        <tr>
+            <th width="35%">Judul</th>
+            <th>Pengarang</th>
+            <th>Penerbit</th>
+            <th>Tahun</th>
+            <th>Stok</th>
+            <th></th>
+        </tr>
+    `);
+    for (let i = 0; i < results.results.length; i++) {
+        table.append(`
+            <tr>
+                <td>${results.results[i].judul}</td>
+                <td>${results.results[i].penulis}</td>
+                <td>${results.results[i].penerbit}</td>
+                <td>${results.results[i].tahun_terbit}</td>
+                <td>${results.results[i].stok}</td>
+                <td class="danger delete" data-id="${results.results[i].id_buku}">Hapus</td>
+                <td class="primary edit" data-id="${results.results[i].id_buku}"
+                                        data-judul="${results.results[i].judul}"
+                                        data-kategori="${results.results[i].id_kategori}"
+                                        data-penulis="${results.results[i].penulis}"
+                                        data-penerbit="${results.results[i].penerbit}"
+                                        data-tahun_terbit="${results.results[i].tahun_terbit}"
+                                        data-stok="${results.results[i].stok}">Edit</td>
+            </tr>
+        `);
+    }
+    
+    pagination.empty();
+    if (results.previous) {
+        pagination.append(`
+            <li class="page-item">
+                <a class="page-link" href="#" data-page="${results.previous.page}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+        `);
+    } else {
+        pagination.append(`
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+        `);
+    }
+
+    for (let i = 1; i <= Math.ceil(response.length / limit); i++) {
+        if (i == page) {
+            pagination.append(`
+                <li class="page-item active">
+                    <a class="page-link" href="#" data-page="${i}">${i}</a>
+                </li>
+            `);
+        } else {
+            pagination.append(`
+                <li class="page-item">
+                    <a class="page-link" href="#" data-page="${i}">${i}</a>
+                </li>
+            `);
+        }
+    }
+
+    if (results.next) {
+        pagination.append(`
+            <li class="page-item">
+                <a class="page-link" href="#" data-page="${results.next.page}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        `);
+    } else {
+        pagination.append(`
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        `);
+    }
+
+    $('.page-link').click(function(e) {
+        e.preventDefault();
+        const page = $(this).data('page');
+        paginatedResult(response, table, pagination, page);
+    });
 }

@@ -10,6 +10,9 @@ $(document).ready(function(){
     const todayDate = yyyy + '-' + mm + '-' + dd;
     $('#tgl_kembali_display').val(todayDate);
     $('#tgl_kembali').val(todayDate);
+
+    pengembalianChart();
+    pinjamKembaliChart();
 });
 
 const getPeminjaman = {
@@ -46,6 +49,7 @@ const getPetugas = {
 
 $('#no_peminjaman').change(function(){
     const id = $('#no_peminjaman').val();
+    $('#id_peminjaman').val(id);
     getDetailPeminjaman.loadData = "/peminjaman/detail/" + id;
 });
 
@@ -62,3 +66,156 @@ const getDetailPeminjaman = {
         document.getElementById("id_anggota").value = data[0].id_anggota;
     }
 }
+
+// chart pengembalian
+function pengembalianChart() {
+    async function fetchData() {
+        const url = "http://localhost:8000/pengembalian/all";
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    }
+
+    fetchData().then(data => {
+        let januari = 0,
+            februari = 0,
+            maret = 0,
+            april = 0,
+            mei = 0,
+            juni = 0,
+            juli = 0,
+            agustus = 0,
+            september = 0,
+            oktober = 0,
+            november = 0,
+            desember = 0;
+
+        const tgl_kembali = data.map(
+            function(index) {return index.tgl_pengembalian}
+        );
+        tgl_kembali.filter(function(value, index, arr) {
+            arr[index] = value.split("-");
+            if (arr[index][1] == "01") {
+                januari++;
+            } else if (arr[index][1] == "02") {
+                februari++;
+            } else if (arr[index][1] == "03") {
+                maret++;
+            } else if (arr[index][1] == "04") {
+                april++;
+            } else if (arr[index][1] == "05") {
+                mei++;
+            } else if (arr[index][1] == "06") {
+                juni++;
+            } else if (arr[index][1] == "07") {
+                juli++;
+            } else if (arr[index][1] == "08") {
+                agustus++;
+            } else if (arr[index][1] == "09") {
+                september++;
+            } else if (arr[index][1] == "10") {
+                oktober++;
+            } else if (arr[index][1] == "11") {
+                november++;
+            } else if (arr[index][1] == "12") {
+                desember++;
+            }
+        });
+
+        let dataset = [januari, februari, maret, april, mei, juni, juli, agustus, september, oktober, november, desember];
+        
+        myPengembalianChart.config.data.datasets[0].data = dataset;
+        myPengembalianChart.update();
+    });
+}
+
+const labels = [
+    'Januari',
+    'Februari',
+    'Maret',
+    'April',
+    'Mei',
+    'Juni',
+    'Juli',
+    'Agustus',
+    'September',
+    'Oktober',
+    'November',
+    'Desember'
+];
+
+const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Pengembalian',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+    }]
+};
+
+const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+};
+
+const myPengembalianChart = new Chart(
+    document.getElementById('pengembalianChart'),
+    config
+);
+// end chart pengembalian
+
+// chart pinjam dan kembali buku
+function pinjamKembaliChart() {
+    async function fetchData() {
+        const url = "http://localhost:8000/peminjaman/all";
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    }
+
+    fetchData().then(data => {
+        let pinjam = 0,
+            kembali = 0;
+
+        const status = data.map(
+            function(index) {return index.status}
+        );
+        status.filter(function(value, index, arr) {
+            if (arr[index] == "pinjam") {
+                pinjam++;
+            } else if (arr[index] == "kembali") {
+                kembali++;
+            }
+        });
+
+        let dataset = [pinjam, kembali];
+        
+        myPinjamKembaliChart.config.data.datasets[0].data = dataset;
+        myPinjamKembaliChart.update();
+    });
+}
+
+const labelsPinjamKembaliCharrt = [
+    'Dipinjam',
+    'Dikembalikan'
+];
+
+const dataPinjamKembaliChart = {
+    labels: labelsPinjamKembaliCharrt,
+    datasets: [{
+      backgroundColor: ['#ff7782', '#41f1b6'],
+    }]
+};
+
+const configPinjamKembaliChart = {
+    type: 'pie',
+    data: dataPinjamKembaliChart,
+    options: {}
+};
+
+const myPinjamKembaliChart = new Chart(
+    document.getElementById('pinjamKembaliChart'),
+    configPinjamKembaliChart
+);
+// end chart pinjam dan kembali buku
