@@ -1,0 +1,9 @@
+Minggu ini
+individu : laporan dari praktik phpmaker
+kelompok : membuat aplikasi crud php terkoneksi mysql dengan cdm pdm yang ditentukan pak par
+
+Minggu depan
+individu : menonton semua video dan mempraktekkannya di rumah masing-masing. video playlist PHP dari WPU. ada 25 video. buat makalah berisi laporan dari hasil menonton dan praktek dari video tersebut.
+video 1 menjelaskan apa
+video 2 menjelaskan apa
+coba semua source code dan masukkan dalam laporan beserta hasilnya
