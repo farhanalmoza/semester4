@@ -1,0 +1,6 @@
+3. praktikum 2: js & jquery, soalnya yang sudah diberikan dulu, yaitu yang membuat bintang segitiga, jquery soalnya membuat aplikasi crud menggunakan jquery dan akses ke dbms (akses menggunakan jquery, TIDAK PHP). dl jumat minggu depan.
+
+4. Tugas P12 dan P13 sama dengan yang digrup bersama. di  atas beri link pengurutan. diberi pagiation per 100 data. diberi filter pencarian berdasarkan kolom.
+
+minggu ini membuat tugas individu modifikasi tabel dan membuat laporan praktikum
+

@@ -1,0 +1,22 @@
+Laprak ke-2
+soal :
+1. Buatlah sebuah tampilan segitiga bintang piramida yang mengarah ke empat sisi menggunakan javascript
+2. Buatlah aplikasi web yang dapat melakukan proses CRUD menggunakan kombinasi JQuery dengan database yang dipilih dengan saudari adapun pilihannya Firebase,MySQL, dan WebSQL
+DL :  minggu jam 4 sore
+dikumpulkan di ilmu kelas praktikum
+
+P12:
+individu : laporan praktikum pertama
+kelompok : pdf dari source code
+source code dikirim ke grup kelompok
+
+P13:
+individu : laporan praktikum kedua
+kelompok : pdf dari source code
+source code dikirim ke grup kelompok
+
+minggu depan buat diagram line
+
+membuat gdrive khusu praktikum par F
+
+jangan ditunda-tunda karena makin lama makin numpuk
