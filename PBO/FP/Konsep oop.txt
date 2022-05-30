@@ -1,0 +1,21 @@
+Konsep oop yang digunakan :
+1. Objects
+	Objek adalah entitas runtime dasar yang dapat diidentifikasi dalam OOP.
+	Objek dapat mewakili entitas dunia nyata, seperti orang, mobil, tempat, dan lain-lain.
+2. Classes
+	Class pada dasarnya adalah template dari serangkaian objek yang berbagi beberapa properties dan behaviour.
+3. Data abstraction
+	Abstraksi data adalah konsep yang menyembunyikan detail latar belakang dan hanya mewakili informasi yang diperlukan untuk dunia luar.
+	Ini adalah proses penyederhanaan konsep dunia nyata menjadi komponen yang mutlak diperlukan.
+4. Data Encapsulation
+	Enkapsulasi data adalah salah satu konsep terpenting dari OOP.
+	Ini adalah teknik yang menggabungkan data members dan fungsi, beroperasi pada data itu dalam satu unit yang dikenal sebagai kelas. 
+5. Inheritance
+	Warisan juga merupakan karakteristik penting dari OOP.
+	Ini pada dasarnya adalah metode yang menyediakan cara yang kemampuan dan properti dari satu kelas untuk datang ke kelas lain.
+6. Polymorphism
+	Pada dasarnya polimorfisme adalah kemampuan suatu pesan atau data untuk diproses lebih dari satu bentuk. 
+7. Overloading
+	Overloading adalah fitur dari bahasa OOP seperti Java yang berkaitan dengan compile time atau static polymorphishm.
+	Fitur ini mengizinkan method berbeda untuk memiliki nama yang sama, tetapi signature berbeda, khususnya angka dari input parameter dan tipe dari input parameternya.
+
