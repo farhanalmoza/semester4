@@ -1,0 +1,20 @@
+tugas FP ada 4
+2 individu
+2 kelompok (didemokan minggu depan)
+
+demo hari ini ditunggu sampai jam 4 sore
+
+minggu depan demo kelompok di ruangannya pak par. waktunya diatur sama pak par.
+
+kalo waktunya UAS perlu hadir, maka hadir saja untuk tanda tangan absensi
+
+1 minggu kedepan kerjakan bot telegram.
+waktu UAS kerjakan bot tele yang mengirim gambar.
+Source Code dikumpulkan di grup kelompok.
+
+Pilihan:
+1. 
+
+
+PUTUSKAN APAKAH ABSEN HARI INI DIMASUKKAN KE SISTEM ATAU TIDAK?
+APAKAH MINGGU DEPAN SATU BOT ATAU LANGSUNG DUA?
