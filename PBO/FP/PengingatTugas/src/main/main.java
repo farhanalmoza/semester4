@@ -4,6 +4,14 @@
  */
 package main;
 import com.formdev.flatlaf.FlatLightLaf;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -17,7 +25,34 @@ public class main extends javax.swing.JFrame {
     public main() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        
+        Connect();
+        ButtonDaftar();
+    }
+    
+    Connection con;
+    PreparedStatement pst;
+    ResultSet rs;
+    
+    public void Connect() {
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pengingat_tugas", "root", "");
+            System.out.println("Berhasil");
+        } catch (SQLException e) {
+            Logger.getLogger(buatDaftar.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+    
+    public void ButtonDaftar() {
+        try {
+            pst = con.prepareStatement("SELECT * FROM tipe");
+            rs  = pst.executeQuery();
+            
+            while(rs.next()) {
+                System.out.println(rs.getString(2));
+            }
+        } catch(SQLException e) {
+            Logger.getLogger(buatDaftar.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     /**
@@ -201,6 +236,11 @@ public class main extends javax.swing.JFrame {
         jComboBox1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(88, 67, 190));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Urutkan Jatuh Tempo Terdekat", "Urutkan Jatuh Tempo Terjauh", "Urutkan Terbaru Dibuat", "Urutkan Terlama Dibuat" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -490,6 +530,10 @@ public class main extends javax.swing.JFrame {
     private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
         jLabel1.setText("Perkuliahan");        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton6ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments

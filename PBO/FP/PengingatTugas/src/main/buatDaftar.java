@@ -4,6 +4,10 @@
  */
 package main;
 import com.formdev.flatlaf.FlatLightLaf;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Hafizh
@@ -15,6 +19,19 @@ public class buatDaftar extends javax.swing.JFrame {
      */
     public buatDaftar() {
         initComponents();
+        Connect();
+    }
+    
+    Connection con;
+    PreparedStatement pst;
+    
+    public void Connect() {
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pengingat_tugas", "root", "");
+            System.out.println("Berhasil");
+        } catch (SQLException e) {
+            Logger.getLogger(buatDaftar.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     /**
@@ -27,42 +44,42 @@ public class buatDaftar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextField_namaDaftar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButton_batal = new javax.swing.JButton();
+        jButton_tambah = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(235, 231, 255));
 
-        jTextField1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_namaDaftar.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jTextField_namaDaftar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextField_namaDaftarActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel1.setText("Nama Daftar");
 
-        jButton1.setBackground(new java.awt.Color(209, 109, 106));
-        jButton1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton_batal.setBackground(new java.awt.Color(209, 109, 106));
+        jButton_batal.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jButton_batal.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_batal.setText("Cancel");
+        jButton_batal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton_batalActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(88, 67, 190));
-        jButton2.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Tambah");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton_tambah.setBackground(new java.awt.Color(88, 67, 190));
+        jButton_tambah.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jButton_tambah.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_tambah.setText("Tambah");
+        jButton_tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton_tambahActionPerformed(evt);
             }
         });
 
@@ -73,11 +90,11 @@ public class buatDaftar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField_namaDaftar, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_tambah, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton_batal, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -89,11 +106,11 @@ public class buatDaftar extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField_namaDaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton_tambah, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_batal, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -112,17 +129,33 @@ public class buatDaftar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);       // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jButton_tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_tambahActionPerformed
+        try {
+            String namaDaftar = jTextField_namaDaftar.getText();
+        
+            pst = con.prepareStatement("INSERT INTO tipe (`nama_tipe`) VALUES (?)");
+            pst.setString(1, namaDaftar);
+            
+            int k = pst.executeUpdate();
+            
+            if(k==1) {
+                JOptionPane.showMessageDialog(this, "Daftar baru berhasil ditambahkan!");
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(this, "Daftar baru gagal ditambahkan!");
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(buatDaftar.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }//GEN-LAST:event_jButton_tambahActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField_namaDaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_namaDaftarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextField_namaDaftarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton_batalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_batalActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton_batalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,10 +170,10 @@ public class buatDaftar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton_batal;
+    private javax.swing.JButton jButton_tambah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField_namaDaftar;
     // End of variables declaration//GEN-END:variables
 }
