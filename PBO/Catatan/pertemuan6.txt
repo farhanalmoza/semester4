@@ -1,0 +1,18 @@
+kerjakan soal 1 dan 2 seselesainya, maksimal hari ini jam 12 malam
+
+beri laporan dan kodenya.
+
+format laporannya ada di elearning.
+
+judul : Class dan Object
+isi materi class dan object dari pertemuan sebelumnya, sebagai pengantar
+
+beri soal dan jawaban
+
+masukkan kode (sesuai format)
+tambahkan angka baris kode (line-nya)
+jelasin per line (copas semua kode 1 file)
+
+masukkan screenshot hasil dan diberi penjelasan
+
+

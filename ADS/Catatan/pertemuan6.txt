@@ -1,0 +1,7 @@
+ini dibuat FP
+yang dilaporan tahap analisisnya tidak dipresentasikan. buat analsisnya. situsnya membuat apa beserta bisnis flow. deskripsi dari situs yang analasis, sistem flow. rancangan strukturnya dfd, erd, cdm/pdm. dibuat perancangan berbasis uml, ada uscase. ada kelas diagram, dll.
+
+yang dijelasin mingdep, deskripsi, sistem flow, dan dfd
+
+UTS ujian tulis individu. UAS presentasi kelompok dari FP ini
+

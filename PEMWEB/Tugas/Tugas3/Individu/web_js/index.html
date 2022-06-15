@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Farkhan</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="tabs form">
+			<div class="tab-header">
+				<div class="pane active">Segitiga 1</div>
+				<div class="pane">Segitiga 2</div>
+				<div class="pane">Segitiga 3</div>
+				<div class="pane">Segitiga 4</div>
+			</div>
+			<div class="tab-indicator"></div>
+			<div class="tab-body">
+				<div class="content active">
+					<h2>Segitiga 1</h2>
+					<form id="segitiga1">
+						<div class="txt_field">
+							<input type="text" class="tinggi" required>
+							<span></span>
+							<label for="">Tinggi Segitiga</label>
+						</div>
+						<input type="button" value="Tampilkan" class="tampilkan" onclick="segitiga1(this.form)">
+					</form>
+				</div>
+				<div class="content">
+					<h2>Segitiga 2</h2>
+					<form id="segitiga2">
+						<div class="txt_field">
+							<input type="text" class="tinggi" required>
+							<span></span>
+							<label for="">Tinggi Segitiga</label>
+						</div>
+						<input type="button" value="Tampilkan" class="tampilkan" onclick="segitiga2(this.form)">
+					</form>
+				</div>
+				<div class="content">
+					<h2>Segitiga 3</h2>
+					<form id="segitiga3">
+						<div class="txt_field">
+							<input type="text" class="tinggi" required>
+							<span></span>
+							<label for="">Tinggi Segitiga</label>
+						</div>
+						<input type="button" value="Tampilkan" class="tampilkan" onclick="segitiga3(this.form)">
+					</form>
+				</div>
+				<div class="content">
+					<h2>Segitiga 4</h2>
+					<form id="segitiga4">
+						<div class="txt_field">
+							<input type="text" class="tinggi" required>
+							<span></span>
+							<label for="">Tinggi Segitiga</label>
+						</div>
+						<input type="button" value="Tampilkan" class="tampilkan" onclick="segitiga4(this.form)">
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="tabs hasil">
+			<h2>Hasil</h2>
+			<p class="bintang"></p>
+			<input type="button" value="Bersihkan" class="bersihkan" onclick="bersihkan()">
+		</div>
+	</div>
+	
+	<script src="script.js"></script>
+</body>
+</html>

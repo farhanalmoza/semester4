@@ -1,0 +1,37 @@
+CATATAN PBO 2
+
+class merupakan prototipe atau blue print yang mendefinisikan secara umum.
+
+proses pembentukan objek disebut instansiasi.
+
+objek adalah hasil instansiasi dari kelas. objek memiliki atribut dan metode. 
+
+atribut yaitu idenstitas unik dari objek mahasiswa memiliki atribut npm, prodi, fakultas, atau univnya.
+
+metode atau perilaku, yaitu sesuatu yang bisa dilakukan. jika atribut adalah hal yang menempel, maka metode yaitu sesuatu yang bisa mereka lakukan. contohnya mahasiswa dapat melakukan penelitian.
+
+enkapsulasi akan dibahas terpisah di pertemuan lain. untuk memberikan akses kepada class yang lain.
+
+inhertansi, yaitu hubungan antar kelas.
+
+polimorfism, kemampuan merepresentasikan dua bentuk objek yang berbeda. misalkan dalam game, 1 objek bisa berbentuk" dengan objek yang lain
+
+
+
+instans variabe adala atribut untuk tiap objek dari kelas yang sama
+
+konsep dasar OOP
+- enkapsulasi
+pembungkusan variabel dan metod dalam sebuah objek
+
+- inheritance
+pewarisan atribut dan metod. class yang mewarisi (superclass). class yang diwarisi (subclass)
+subclass bisa menjadi superclass bagi class yang lain.
+contoh: sepeda -> sepeda gunung, sepeda balap, sepeda motor.
+
+- polimorfiesme
+kemampuan objek memili lebih dari satu bentuk. satu kode yang dapat berubah-ubah bentuknya.
+
+TUGAS DARI PPT
+membuat oop..
+masing" kelas ada 3 objek yang berbeda

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sistem Peminjaman Buku Perpustakaan</title>
+</head>
+<body>
+<img src="BG.jpg" width="1350px" height="500px">
+	<div class="container-awal">
+		<nav>
+		<div class="logo">
+			<h3>Sistem Peminjaman Buku Perpustakaan</h3>
+		</div>
+			<div class="menu">
+				<ul>
+					<li class="menu1"><a href="">Home</a></li>
+					<li class="menu2"><a href="">Anggota</a></li>
+					<li class="menu3"><a href="">Buku</a></li>
+					<li class="menu4"><button class="loginbtn" onclick="document.getElementById('kotak-login-register').style.display='block'" style="width:auto;">Login</button></li>
+				</ul>
+			</div>
+		</nav>
+		<div id="kotak-login-register" class="login-and-register">
+			<div class="form-box">
+				<div class="button-box">
+					<div id="btn"></div>
+					<button type="button" onclick="login()" class="toggle-btn">Log In</button>
+					<button type="button" onclick="register()" class="toggle-btn">Register</button>
+				</div>
+				<form id="login" class="input-group-login">
+					<input type="text" class="input-field" placeholder="Email/Username" required>
+					<input type="password" class="input-field" placeholder="Password" required>
+					<input type="checkbox" id="logos"><label for="logos">Remember Me</label>
+					<button type="submit" class="submit-btn">Log In</button>
+				</form>
+				<form id="register" class="input-group-register">
+					<input type="text" class="input-field" placeholder="Enter Name" required>
+					<input type="text" class="input-field" placeholder="Enter Username" required>
+					<input type="password" class="input-field" placeholder="Enter Password" required>
+					<input type="password" class="input-field" placeholder="Confirm Password" required>
+					<input type="checkbox" id="agree"><label for="agree">I Agree to the terms and conditions</label>
+					<button type="submit" class="submit-btn">Register</button>
+				</form>
+				</form>
+			</div>
+		</div>
+		
+	</div>
+	 <script>
+        var x=document.getElementById('login');
+        var y=document.getElementById('register');
+        var z=document.getElementById('btn');
+        function register()
+        {
+            x.style.left='-400px';
+            y.style.left='50px';
+            z.style.left='110px';
+        }
+        function login()
+        {
+            x.style.left='50px';
+            y.style.left='450px';
+            z.style.left='0px';
+        }
+    </script>
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+<br><br>
+    <div class="deskripsi" align="center">
+	<h3>What is Library?</h3><br>
+	<p> A library is a collection of materials, books or media that are easily accessible for use and not just for display purposes. It is responsible for housing updated information in order to meet the user's needs on a daily basis. A library provides physical (hard copies documents) or digital access (soft copies) materials, and may be a physical location or a virtual space, or both. A library's collection can include printed materials and other physical resources in many formats such as DVD, CD and Cassette as well as access to information, music or other content held on bibliographic databases. A library, which may vary widely in size, may be organized for use and maintained by a public body such as a government; an institution such as a school or museum; a corporation; or a private individual. In addition to providing materials, libraries also provide the services of librarians who are trained and experts at finding, selecting, circulating and organizing information and at interpreting information needs, navigating and analyzing very large amounts of information with a variety of resources.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+pertemuan 4 pengumpulan rabu jam 4 sore
+
+tugas pertemuan 4, waktu 1 minggu. kerja kelompok. tugas kelompok 2. tidak ada tugas individu. satunya tugas kelompok praktik. 
+1. membbuat ppt dan video presentasi materi 3 hal, 1 hal 20 slide (60 slide). ajax, jquery, dan json. pengertian dasar, fungsi di jsnya apa? fitur/fasilitasnya.
+2. praktik ngoding. gunakan basis data mysqpl ataupun lainnya, dengan tema bebas. menggunakan basis data yang digunakan di kelas basis data. gunakan mysql di xampp. menggunakan tekin js, bisa menampilkan data data dari mysql dalam bentuk grafik. boleh pake jquery, ajax, json. untuk membaca data dari mysql lalu tampilkan dalam diagram batang dan lingkaran menggunakan chart.js. untuk menghubungkan ke mysql, salah satunya bisa pake knex js. membuat basis data 1 kolom cukup.
+
+knex js ambil bagian koneksinya saja agar bisa menampilkan data dari mysql ke javascript. ambil variabelnya pake javascript. variabel tersebut masukkan ke chart js.
+
+tidak boleh menggunakan PHP (harus pake JS)
+harus menggunakan chartJS
+
+pengumpulan tugas kelompok?

@@ -1,0 +1,57 @@
+praktikumnya ada 5 pertemua. pengumpulannya lewat elearning. nanti dibuatkan, ada 5 pertemuan yang 1 minggu 1 pertemuan. yang dua pertemuan sudah diajarkan sampe js dan json. yang 3 pertemuan nanti setelah uts, yaitu mengenai php. dosen pemweb ada 3. modul yang dikerjakan pak par adalah modul 1 sama 3.
+
+TUGAS PRAKTIKUM
+PERTEMUAN 6:
+Tugas individu : membuat laporan praktikum pertama
+pengumpulan :
+- ilmu
+- pemweb bagian tugas individu (pdf)
+- laporan di grup kelompok tele
+- gdrive
+tugas kelompok : penjelasan progres tugas kelompok (FP).
+
+PERTEMUAN 7:
+Tugas individu : membuat laporan praktikum kedua
+pengumpulan :
+- ilmu
+- pemweb bagian tugas individu (pdf)
+- laporan di grup kelompok tele
+- gdrive
+tugas kelompok : penjelasan progres tugas kelompok (FP)
+
+pertemuan 8: UTS --> final project kelompok, dikerjakan dari sekarang, lalu demo perkelompok.
+deskripsi:
+membuat aplikasi yang dapat menyimpan dan mengolah data dan menampilkannya dalam bentuk diagram batang dan lingkaran (CRUD). Aplikasi dibuat menggunakan js dan turunannya (DILARANG FRAMEWORK). kemudian upload (dihosting). diagramnya boleh menggunakan Chart JS atau lainnya. boleh menggunakan bootstrap.
+
+Output dari FP UTS : membuat laporan dalam bentuk paper jurnal SINTA 4 atau SINTA 3. silakan cari jurnal SINTA 4 atau 3 yang masih aktif. Kemudian pilih dan buat akun untuk login.
+- ss bukti bahwa sudah membuat akun di jurnal yang dipilih ke grup kelompok.
+- download template jurnalnya
+- kirim bukti ss dan template jurnal ke grup kelompok (DL sebelum hari rabu)
+- DL jurnal pada pertemuan ke-9
+
+pertemuan 9: membuat paper menggunakan template.
+
+Tema aplikasinya, silakan buat tema dari masing-masing kelompk, lalu dilist.
+
+pertemuan 9-15 akan ada 3 praktikum (diinfokan lebih lanjut). 
+
+setelah uts masih js 1-2 pertemuan, kemudian masuk php.
+
+cek playlist pak par, jika tidak ada kelompoknya, silakan buat videonya, lalu jelaskan bahwa terlambat.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

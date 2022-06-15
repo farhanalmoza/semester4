@@ -1,0 +1,7 @@
+nama bot : botKelompok2
+username bot : kelompok_2_bot
+link bot : t.me/kelompok_2_bot
+HTTP API : 5364369309:AAFY6qlUGCh55e80HAyQX_aZYr1acOOMFSU
+docs API : https://core.telegram.org/bots/api
+
+Selamat datang di kelompok 2! BOT ini merupakan BOT yang dibuat oleh kelompok 2 yang dapat digunakan untuk mendapatkan informasi dari hasil tambang INDODAX hingga tanggal 3 Juni 2022. Untuk memulai BOT kami, ketik /start, dan selamat menggunakan BOT Kelompok 2!

@@ -1,0 +1,24 @@
+tugas yang dikumpulkan di pertemuan 5 & 7
+
+UTS isinya demo fp yang sudah jadi
+
+sebelum publis paper, cek plagiase, harapannya plagiasi <10%
+laporkan hasil plagiasi
+
+di dalam papernya, dimasukkan flowchart, diagram fishbond yang menjelaskan persamalahan yang akan dibuat pada aplikasi itu. bisa pake visio atau yang lain. buat ERD-nya. kalo masih mampu, buat cdm dan pdm. kemudian tampilan struktur database-nya.
+flowchart dan fishbond di metodologi.
+erd, cdm, pdm di hasil dan pembahasan.
+update ini terakhir dikumpulkan di hari rabu besok jam 4 sore.
+
+MENGENAI PRAKTIKUM
+praktikum di geser setelah UTS
+
+UTS - UAS = ada lima praktikum. dikerjakan sesuai urutannya.
+ga perlu tanya kapan soal praktikum sebelum dijelaskan sama pak par
+
+revisi web
+tambahkan diagram batang lingkapan
+eksport excel dan pdf
+tambahkan tampilan depan
+
+

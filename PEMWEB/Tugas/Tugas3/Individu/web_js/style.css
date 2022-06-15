@@ -1,0 +1,172 @@
+body {
+    background-color: #ddd;
+    font-family: "Raleway", sans-serif;
+}
+
+.container {
+    display: flex;
+    padding-top: 5rem;
+}
+
+/* Tabs Style */
+.tabs {
+    position: absolute;
+    width: 500px;
+    height: 320px;
+    background: #f5f5f5;
+    padding: 20px 30px;
+    overflow: hidden;
+}
+
+/* Button style */
+input[type="button"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #00acee;
+    background: #00acee;
+    font-size: 18px;
+    color: #f5f5f5;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+input[type="button"]:hover {
+    border-color: #f5f5f5;
+    transition: .5s;
+}
+
+/* Tabs Form Style */
+.tabs.form .tab-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.tabs.form .tab-header > div {
+    width: calc(100% / 4);
+    text-align: center;
+    color: #888;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+}
+.tabs.form .tab-header > div.active {
+    color: #00acee;
+}
+.tabs.form .tab-indicator {
+    position: relative;
+    width: calc(100% / 4);
+    height: 5px;
+    background: #00acee;
+    left: 0px;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+.tabs.form .tab-body {
+    position: relative;
+    height: calc(100% - 60px);
+    padding: 10px 5px;
+}
+.tabs.form .tab-body > div {
+    position: absolute;
+    top: -200%;
+    margin-top: 5px;
+    transform: scale(0.9);
+    transition: opacity 0.5s, ease-in-out 0s, transform 0.5s ease-in-out 0s;
+}
+.tabs.form .tab-body > div.active {
+    top: 0%;
+    opacity: 1;
+    transform: scale(1);
+    margin-top: 0px;
+    width: 100%;
+}
+.tabs.form {
+    right: 50.5%;
+    box-shadow: -5px 10px 5px #ccc;
+    border-radius: 50px 5px 5px 50px;
+}
+
+/* Tabs Hasil Style */
+.tabs.hasil {
+    left: 50.5%;
+    box-shadow: 5px 10px 5px #ccc;
+    border-radius: 5px 50px 50px 5px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.hasil h2 {
+    text-align: center;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: black;
+}
+p.bintang {
+    text-align: left;
+    overflow-y: scroll;
+    height: 55%;
+    letter-spacing: normal;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+.bersihkan {
+    padding: 0 40px;
+    border-radius: 5px 5px 25px 5px;
+}
+
+/* Form Style */
+.tabs.form h2 {
+    text-align: center;
+    color: black;
+}
+.tabs form {
+    padding: 0 20px;
+}
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 40px 0;
+}
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+}
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.txt_field span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00acee;
+    transition: 0.5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -5px;
+    color: #00acee;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+    width: 100%;
+}
+.tampilkan {
+    border-radius: 5px 5px 5px 25px;
+}

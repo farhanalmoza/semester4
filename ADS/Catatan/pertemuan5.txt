@@ -1,0 +1,3 @@
+- API termasuk external entity bukan?
+
+cari studi kasus kelompok (8 kelompok). cari sistem informasi dan analisis kebutuhannya dan model perancangannya seperti apa. rekomendasi solusinya. buat DFD & ERD nya.

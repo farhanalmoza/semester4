@@ -1,0 +1,15 @@
+membuat 4 laporan. laporan tugas kelompok atau individu
+
+1. html css, materinya
+2. html5 css3
+3. javascript
+4. jquery, ajax, json
+
+tugas dari lab, kerjakan dikumpulkan terakhir hari minggu pagi. kemungkinan ada revisi.
+
+nilai lab : nilai praktikum + nilai dosen
+
+dikumpulkan di drive (komting)
+isinya tugas praktikum 1-5
+
+

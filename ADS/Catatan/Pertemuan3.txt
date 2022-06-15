@@ -1,0 +1,9 @@
+tools membuat diagram, pilih sendiri. jangan pake word ataupun paint
+
+sistem analis, melakukan analisis sitem. yang dianalasis adalah bisnis proses, kebutuhan sistem yang dibangun.
+sistem desain, 
+
+cari kegiatan min 2 proses bisnis utama. membuat analisi sistemnya. contoh ada di slide ppt. buat sampai ke workflow (bisnis dan sitem)
+
+DL hari selasa, minggu depan
+

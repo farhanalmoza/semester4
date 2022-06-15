@@ -1,0 +1,9 @@
+protokol adalah aturan. fungsinya untuk memastikan data data berjalan semestinya
+protokol yang banyak dipaka adalah TCP. ada juga protokol UDP => UDP lebih cepet dari TCP, tapi sulit dipercaya. UDP biasanya ada di dark web. UDP tidak menggunakan IP. IP UDP cepat + anonim, akan tetapi rentan korup.
+
+arsitektur protokol,
+
+
+
+ketika download file ilegal kemudian korup, apakah itu pasti udp?
+
